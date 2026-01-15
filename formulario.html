@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Reddic Form</title>
+<style>
+    * {margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif;}
+    body {background: #000; color: #fff;}
+    .hero {
+        width: 100%; height: 100vh;
+        background: url('fondo.jpg') center/cover no-repeat;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 40px;
+    }
+    .overlay {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.5);
+    }
+    .content {
+        position: relative;
+        max-width: 40%;
+        z-index: 2;
+    }
+    h1 {font-size: 2.4rem; margin-bottom: 20px;}
+    p {line-height: 1.4; margin-bottom: 10px;}
+
+    .form-box {
+        position: absolute;
+        right: 40px;
+        top: 40px;
+        width: 45%;
+        background: rgba(0,0,0,0.6);
+        padding: 30px;
+        border-radius: 10px;
+    }
+    label {display: block; margin-top: 15px; font-size: 14px;}
+    input, select, textarea {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 6px;
+        border: none;
+    }
+    textarea {height: 120px; resize: none;}
+    button {
+        margin-top: 20px;
+        padding: 12px 25px;
+        background: #e0273a;
+        border: none;
+        border-radius: 8px;
+        color: #fff;
+        cursor: pointer;
+    }
+    .footer {
+        width: 100%; text-align: center; padding: 15px;
+        background: #111; font-size: 14px;
+    }
+</style>
+</head>
+<body>
+
+<div class="hero">
+    <div class="overlay"></div>
+
+    <div class="content">
+        <h1>¿Estás Reddic?</h1>
+        <p>Proporcionamos acceso a herramientas y recursos digitales de última generación
+            que ayude a los emprendedores a desarrollar habilidades comerciales desde la virtualidad. ¡Conócenos!</p>
+    </div>
+
+    <form class="form-box">
+        <label>Nombre *</label>
+        <input type="text" placeholder="Tu nombre" />
+
+        <label>Correo electrónico *</label>
+        <input type="email" placeholder="correo@ejemplo.com" />
+
+        <label>Teléfono / Whatsapp *</label>
+        <input type="text" placeholder="Número" />
+
+        <label>Solicito más información de los productos Reddic en: *</label>
+        <select>
+            <option>Seleccionar opción</option>
+            <option>Producto 1</option>
+            <option>Producto 2</option>
+        </select>
+
+        <label>Mensaje</label>
+        <textarea placeholder="Escribe tu mensaje"></textarea>
+
+        <button>Enviar</button>
+    </form>
+</div>
+
+<div class="footer">
+    Fundación Red de Desarrollo Digital Colombia NIT: 901723779-1
+</div>
+
+</body>
+</html>

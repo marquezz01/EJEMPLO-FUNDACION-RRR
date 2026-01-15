@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimización del Área de Diseño - Dynamood</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .mobile-screen::-webkit-scrollbar {
+            width: 4px;
+        }
+        .mobile-screen::-webkit-scrollbar-thumb {
+            background-color: #94a3b8;
+            border-radius: 20px;
+        }
+        .slides-container {
+            transition: transform 0.5s ease-in-out;
+        }
+        .zoomable-image {
+            transition: transform 0.3s ease;
+        }
+        .zoomable-image:hover {
+            transform: scale(1.1);
+        }
+        #fullscreen-image {
+            cursor: default; /* Asegura que el cursor sea normal en la imagen grande */
+            transform: none !important; /* Remueve cualquier transformación de escala */
+        }
+        .dark-image-invert {
+            filter: invert(1);
+            background-color: white; /* Asegura un fondo blanco si la imagen tiene transparencias */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4">
+
+    <!-- Smartphone Frame -->
+    <div class="w-full max-w-sm h-[80vh] max-h-[750px] bg-gray-800 rounded-[40px] shadow-2xl p-4 border-4 border-gray-900">
+        <div class="w-full h-full bg-white rounded-[24px] overflow-hidden relative flex flex-col">
+            <!-- Notch -->
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 w-32 h-6 bg-gray-800 rounded-b-xl z-20"></div>
+            
+            <!-- Screen Content -->
+            <div id="screen" class="flex-1 w-full h-full overflow-hidden">
+                <div id="slides-container" class="flex w-full h-full">
+                    
+                    <!-- Slide 1: Encabezado -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center items-center text-center bg-white">
+                        <div class="w-28 h-28 bg-gray-100 rounded-full mb-6 flex items-center justify-center shadow-lg overflow-hidden">
+                           <img src="img/logo.png" alt="Logo Dynamood" class="w-full h-full object-cover">
+                        </div>
+                        <div class="mb-2">
+                            <span class="text-5xl font-extrabold" style="color: #2D436C;">Dyna</span><span class="text-5xl font-extrabold" style="color: #F7A429;">mood</span>
+                        </div>
+                        <h1 class="text-lg font-bold" style="color: #2D436C;">Optimización del Área de Diseño</h1>
+                        <p class="text-sm mt-1" style="color: #2D436C;">para la Estandarización y Comunicación Efectiva</p>
+                    </div>
+
+                    <!-- Slide 2: Sobre el Proyecto -->
+                    <div class="w-full h-full flex-shrink-0 p-8 flex flex-col justify-center items-center text-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4" style="color: #2D436C;">Sobre el Proyecto</h2>
+                        <p class="text-xs leading-relaxed max-w-xs" style="color: #2D436C;">
+                            Este proyecto surge como parte del plan estratégico de Dynamood para fortalecer la gestión interna del área creativa, garantizando coherencia visual, eficiencia productiva y colaboración interdisciplinaria.
+                        </p>
+                        <div class="mt-6 w-full max-w-xs">
+                             <div class="flex items-center space-x-2 p-2 bg-sky-50 rounded-lg">
+                                <div class="w-5 h-5 rounded-full" style="background-color: #2D446C;"></div>
+                                <p class="text-xs font-semibold" style="color: #2D436C;">Confianza y estabilidad</p>
+                             </div>
+                             <div class="flex items-center space-x-2 p-2 mt-2 bg-sky-50 rounded-lg">
+                                <div class="w-5 h-5 rounded-full" style="background-color: #4693D0;"></div>
+                                <p class="text-xs font-semibold" style="color: #2D436C;">Innovación y tecnología</p>
+                             </div>
+                             <div class="flex items-center space-x-2 p-2 mt-2 bg-sky-50 rounded-lg">
+                                <div class="w-5 h-5 rounded-full" style="background-color: #F7A429;"></div>
+                                <p class="text-xs font-semibold" style="color: #2D436C;">Creatividad y energía</p>
+                             </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 3: Problema Detectado -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <div class="w-full flex-1 flex flex-col justify-center text-left px-4">
+                            <h3 class="font-bold text-center text-lg mb-3" style="color: #F7A429;">Importancia de solucionarlo</h3>
+                            <p class="text-xs mb-4 text-center" style="color: #2D436C;">Si estas problemáticas no se atienden, se presentarán consecuencias como:</p>
+                            <ul class="space-y-3 text-xs list-disc list-inside" style="color: #2D436C;">
+                                <li>Retrasos en los lanzamientos de productos y actualizaciones.</li>
+                                <li>Desgaste del equipo de diseño por sobrecarga laboral.</li>
+                                <li>Pérdida de competitividad ante empresas con procesos más eficientes.</li>
+                                <li>Incongruencia en la identidad visual de Dynamood, afectando su posicionamiento en el mercado.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 4: Objetivos -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Objetivos del Proyecto</h2>
+                        <div class="w-full p-3 rounded-2xl shadow-sm bg-sky-50 mb-3">
+                            <h3 class="font-bold text-center text-sm" style="color: #2D436C;">Objetivo General</h3>
+                            <p class="text-xs mt-1 text-center" style="color: #2D436C;">Optimizar la organización, procesos y comunicación del área de diseño, con metodologías estandarizadas y herramientas colaborativas.</p>
+                        </div>
+                        <div class="w-full">
+                            <h3 class="font-bold mb-2 text-center text-sm" style="color: #2D436C;">Objetivos Específicos:</h3>
+                            <div class="space-y-2">
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm text-center"><p class="font-semibold text-xs" style="color: #2D436C;">Estandarizar flujos y plantillas.</p></div>
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm text-center"><p class="font-semibold text-xs" style="color: #2D436C;">Fortalecer comunicación interdepartamental.</p></div>
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm text-center"><p class="font-semibold text-xs" style="color: #2D436C;">Capacitar al equipo en herramientas y metodologías.</p></div>
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm text-center"><p class="font-semibold text-xs" style="color: #2D436C;">Consolidar la identidad visual institucional.</p></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 5: Plan de Acción -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-5 text-center" style="color: #2D436C;">Plan de Acción</h2>
+                        <div class="w-full flex overflow-x-auto pb-4 mobile-screen">
+                            <div class="flex flex-nowrap space-x-4 px-2">
+                                <div class="flex-shrink-0 w-48 bg-sky-50 p-3 rounded-2xl shadow-sm"><p class="font-bold text-sm text-center" style="color: #2D436C;">FASE 1: Diagnóstico</p><p class="text-xs mt-1" style="color: #2D436C;">Encuestas, entrevistas y análisis de procesos.</p><p class="text-center mt-2"><span class="text-xs bg-slate-200 rounded-full px-2 py-0.5 inline-block" style="color: #2D436C;">2 sem.</span></p></div>
+                                <div class="flex-shrink-0 w-48 bg-sky-50 p-3 rounded-2xl shadow-sm"><p class="font-bold text-sm text-center" style="color: #2D436C;">FASE 2: Estandarización</p><p class="text-xs mt-1" style="color: #2D436C;">Creación de plantillas y manual de identidad.</p><p class="text-center mt-2"><span class="text-xs bg-slate-200 rounded-full px-2 py-0.5 inline-block" style="color: #2D436C;">3 sem.</span></p></div>
+                                <div class="flex-shrink-0 w-48 bg-sky-50 p-3 rounded-2xl shadow-sm"><p class="font-bold text-sm text-center" style="color: #2D436C;">FASE 3: Comunicación</p><p class="text-xs mt-1" style="color: #2D436C;">Implementación de Slack y Notion.</p><p class="text-center mt-2"><span class="text-xs bg-slate-200 rounded-full px-2 py-0.5 inline-block" style="color: #2D436C;">4 sem.</span></p></div>
+                                <div class="flex-shrink-0 w-48 bg-sky-50 p-3 rounded-2xl shadow-sm"><p class="font-bold text-sm text-center" style="color: #2D436C;">FASE 4: Capacitación</p><p class="text-xs mt-1" style="color: #2D436C;">Talleres de UX/UI y metodologías ágiles.</p><p class="text-center mt-2"><span class="text-xs bg-slate-200 rounded-full px-2 py-0.5 inline-block" style="color: #2D436C;">6 sem.</span></p></div>
+                                <div class="flex-shrink-0 w-48 bg-sky-50 p-3 rounded-2xl shadow-sm"><p class="font-bold text-sm text-center" style="color: #2D436C;">FASE 5: Validación</p><p class="text-xs mt-1" style="color: #2D436C;">Medición de KPIs y plan de mejora continua.</p><p class="text-center mt-2"><span class="text-xs bg-slate-200 rounded-full px-2 py-0.5 inline-block" style="color: #2D436C;">3 sem.</span></p></div>
+                            </div>
+                        </div>
+                        <p class="text-center text-sm font-semibold bg-sky-50 p-2 rounded-lg mt-6 shadow-sm flex items-center justify-center" style="color: #2D436C;">
+                            Duración total: 4 meses
+                        </p>
+                    </div>
+
+                    <!-- Slide 6: NEW - Proyectos Priorizados -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Portafolio Priorizados</h2>
+                        <div class="w-full flex-1 flex items-center justify-center">
+                            <img src="img/2.jpg" alt="Portafolio de Proyectos" class="rounded-lg shadow-md max-w-full max-h-full object-contain zoomable-image cursor-pointer">
+                        </div>
+                    </div>
+
+                     <!-- Slide 7: Design Thinking -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Metodología Aplicada</h2>
+                        <div class="mb-4">
+                            <h3 class="font-semibold mb-2 text-center text-sm" style="color: #2D436C;">Design Thinking</h3>
+                            <div class="space-y-2 text-xs text-center" style="color: #2D436C;">
+                                <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Empatizar:</strong> Entrevistas para entender dinámicas y barreras.</p>
+                                <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Definir:</strong> Identificación de problemas clave en flujos de trabajo.</p>
+                                <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Idear:</strong> Diseño de plantillas y flujos en Figma para unificar entregables.</p>
+                                <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Prototipar y Testear:</strong> Validación con equipos para recoger feedback.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Slide 8: NEW - Estandarización -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Estandarización en Acción</h2>
+                         <h3 class="font-semibold mb-3 text-center text-sm" style="color: #2D436C;">Creando un Lenguaje Visual Unificado</h3>
+                        <div class="space-y-2 text-xs text-center" style="color: #2D436C;">
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Manual de Identidad 2.0:</strong> Reglas claras de uso de logo, tipografía y colores.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Biblioteca en Figma:</strong> Componentes reutilizables (botones, cards) para agilizar el diseño.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Plantillas de Proyectos:</strong> Formatos definidos para presentaciones y reportes.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 9: NEW - Colaboración -->
+                     <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Fomentando la Colaboración</h2>
+                         <h3 class="font-semibold mb-3 text-center text-sm" style="color: #2D436C;">Herramientas para la Comunicación Fluida</h3>
+                        <div class="space-y-2 text-xs text-center" style="color: #2D436C;">
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Canales en Slack por Proyecto:</strong> Comunicación centralizada y en tiempo real.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Dashboards en Notion:</strong> Tareas, responsables y cronogramas visibles para todos.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Reuniones de Sincronización:</strong> Espacios fijos para revisión y feedback semanal.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 10: NEW - Capacitación -->
+                     <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Desarrollo de Talento</h2>
+                         <h3 class="font-semibold mb-3 text-center text-sm" style="color: #2D436C;">Capacitación Continua del Equipo</h3>
+                        <div class="space-y-2 text-xs text-center" style="color: #2D436C;">
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Taller de Metodologías Ágiles:</strong> Introducción a Scrum y Kanban para diseñadores.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Workshop de Diseño de Experiencia (UX/UI):</strong> Foco en investigación y prototipado.</p>
+                            <p class="bg-sky-50 p-2 rounded-xl shadow-sm"><strong>Sesiones de Liderazgo Colaborativo:</strong> Mejorando la gestión de proyectos y el trabajo en equipo.</p>
+                        </div>
+                    </div>
+
+                    <!-- Slide 11: Solución Implementada (Summary) -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-5 text-center" style="color: #2D436C;">El Nuevo Ecosistema de Diseño</h2>
+                        <div class="w-full">
+                             <h3 class="font-bold mb-2 text-center text-sm" style="color: #2D436C;">Herramientas Integradas</h3>
+                             <ul class="text-sm mt-1 space-y-2">
+                                <li class="bg-sky-50 p-2 rounded-xl shadow-sm text-center text-xs" style="color: #2D436C;">Notion para la gestión de proyectos</li>
+                                <li class="bg-sky-50 p-2 rounded-xl shadow-sm text-center text-xs" style="color: #2D436C;">Figma como única fuente de verdad visual</li>
+                                <li class="bg-sky-50 p-2 rounded-xl shadow-sm text-center text-xs" style="color: #2D436C;">Slack para la comunicación instantánea</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Slide 12: NEW - KPIs -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Medición de Resultados (KPIs)</h2>
+                        <div class="w-full flex-1 flex items-center justify-center">
+                            <img src="img/1.jpg" alt="Tablero de KPIs" class="rounded-lg shadow-md max-w-full max-h-full object-contain zoomable-image cursor-pointer">
+                        </div>
+                    </div>
+
+                    <!-- Slide 13: Resultados Cuantitativos -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white overflow-y-auto mobile-screen">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Análisis de Resultados</h2>
+                        <div class="mb-4">
+                            <h3 class="font-semibold mb-2 text-center text-sm" style="color: #2D436C;">Resultados Cuantitativos</h3>
+                            <div class="space-y-2">
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">45%</p><p class="text-xs text-center" style="color: #2D436C;">Reducción en tiempos de revisión.</p></div>
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">30%</p><p class="text-xs text-center" style="color: #2D436C;">Mejora en la coherencia visual.</p></div>
+                                <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">35%</p><p class="text-xs text-center" style="color: #2D436C;">Incremento en la satisfacción interna.</p></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Slide 14: Resultados de Encuestas -->
+                    <div class="w-full h-full flex-shrink-0 p-6 flex flex-col justify-center bg-white overflow-y-auto mobile-screen">
+                        <h2 class="text-2xl font-bold mb-4 text-center" style="color: #2D436C;">Feedback del Equipo y Clientes</h2>
+                         <div>
+                            <h3 class="font-semibold mb-2 text-center text-sm" style="color: #2D436C;">Resultados de Encuestas</h3>
+                            <div class="space-y-2">
+                               <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">90%</p><p class="text-xs text-center" style="color: #2D436C;">del equipo percibe mayor claridad en roles.</p></div>
+                               <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">82%</p><p class="text-xs text-center" style="color: #2D436C;">de clientes nota mejora en coherencia visual.</p></div>
+                               <div class="bg-sky-50 p-2 rounded-xl shadow-sm"><p class="font-bold text-lg text-center" style="color: #2D436C;">87%</p><p class="text-xs text-center" style="color: #2D436C;">de clientes evalúa positivamente la comunicación.</p></div>
+                            </div>
+                        </div>
+                        <p class="text-center text-sm font-bold p-3 rounded-lg mt-6 shadow-sm" style="background-color: #F7A429; color: white;">Incremento promedio del 86% en eficiencia</p>
+                    </div>
+
+                    <!-- Slide 15: Conclusión -->
+                    <div class="w-full h-full flex-shrink-0 p-8 flex flex-col justify-center items-center text-center bg-white">
+                        <h2 class="text-2xl font-bold mb-4" style="color: #2D436C;">Conclusión Final</h2>
+                        <p class="text-xs leading-relaxed max-w-xs" style="color: #2D436C;">Este proyecto representa una gestión exitosa de cambio organizacional. La implementación de procesos estandarizados y herramientas colaborativas ha consolidado un modelo de trabajo ágil, productivo y sostenible, considerado hoy una mejor práctica institucional.</p>
+                    </div>
+
+                    <!-- Slide 16: Mensaje Final -->
+                    <div class="w-full h-full flex-shrink-0 p-8 flex flex-col justify-center items-center text-center bg-white">
+                        <p class="text-lg font-semibold leading-relaxed" style="color: #2D436C;">“La <span style="color: #F7A429;">claridad visual</span>, la <span style="color: #F7A429;">colaboración</span> y la <span style="color: #F7A429;">innovación</span> son pilares esenciales para el impacto organizacional.”</p>
+                        <div class="mt-8">
+                            <span class="text-2xl font-extrabold" style="color: #2D436C;">Dyna</span><span class="text-2xl font-extrabold" style="color: #F7A429;">mood</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Navigation -->
+            <div class="bg-gray-50 border-t border-gray-200 p-2 flex justify-between items-center z-10">
+                <button id="prevBtn" class="p-2 rounded-full hover:bg-gray-200 active:bg-gray-300" aria-label="Slide anterior">
+                    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <div class="flex-1 flex justify-center items-center space-x-3 min-w-0">
+                    <div id="dots" class="flex space-x-2"></div>
+                    <div id="slide-progress" class="text-xs font-semibold text-gray-500 w-12 text-center"></div>
+                </div>
+                <button id="nextBtn" class="p-2 rounded-full hover:bg-gray-200 active:bg-gray-300" aria-label="Siguiente slide">
+                     <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fullscreen Image Modal -->
+    <div id="fullscreen-modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center p-4 z-50 hidden">
+        <img id="fullscreen-image" src="" alt="Imagen en pantalla completa" class="max-w-full max-h-full rounded-lg ">
+        <button id="close-fullscreen" class="absolute top-4 right-4 text-white text-4xl font-bold">&times;</button>
+    </div>
+
+    <script>
+        // --- SLIDER LOGIC ---
+        const slidesContainer = document.getElementById('slides-container');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const dotsContainer = document.getElementById('dots');
+        const progressIndicator = document.getElementById('slide-progress');
+        let slideCount = slidesContainer.children.length;
+        let currentSlide = 0;
+
+        function setupSlider() {
+            slideCount = slidesContainer.children.length;
+            currentSlide = 0;
+            
+            dotsContainer.innerHTML = ''; 
+            for (let i = 0; i < slideCount; i++) {
+                const dot = document.createElement('div');
+                dot.classList.add('w-2', 'h-2', 'rounded-full', 'bg-gray-300', 'cursor-pointer', 'transition-all', 'duration-300');
+                dot.addEventListener('click', () => {
+                    currentSlide = i;
+                    updateSlidePosition();
+                });
+                dotsContainer.appendChild(dot);
+            }
+            updateSlidePosition();
+        }
+        
+        function updateSlidePosition() {
+            const slideWidth = slidesContainer.clientWidth;
+            slidesContainer.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+            updateDots();
+            updateProgressIndicator();
+        }
+
+        function updateDots() {
+            const dots = dotsContainer.children;
+            for (let i = 0; i < slideCount; i++) {
+                if(dots[i]) {
+                    dots[i].classList.remove('bg-gray-800', 'w-4');
+                    dots[i].classList.add('bg-gray-300', 'w-2');
+                }
+            }
+            if(dots[currentSlide]) {
+                dots[currentSlide].classList.add('bg-gray-800', 'w-4');
+                dots[currentSlide].classList.remove('bg-gray-300', 'w-2');
+            }
+        }
+
+        function updateProgressIndicator() {
+            if (progressIndicator) {
+                progressIndicator.textContent = `${currentSlide + 1} / ${slideCount}`;
+            }
+        }
+
+        nextBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide < slideCount - 1) ? currentSlide + 1 : 0;
+            updateSlidePosition();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slideCount - 1;
+            updateSlidePosition();
+        });
+        
+        setupSlider();
+        window.addEventListener('resize', updateSlidePosition);
+
+        // --- FULLSCREEN IMAGE LOGIC ---
+        const modal = document.getElementById('fullscreen-modal');
+        const modalImg = document.getElementById('fullscreen-image');
+        const closeBtnFs = document.getElementById('close-fullscreen');
+        const zoomableImages = document.querySelectorAll('.zoomable-image');
+
+        zoomableImages.forEach(img => {
+            img.addEventListener('click', () => {
+                modal.classList.remove('hidden');
+                modalImg.src = img.src;
+                if (img.classList.contains('dark-image-invert')) {
+                    modalImg.classList.add('dark-image-invert');
+                } else {
+                    modalImg.classList.remove('dark-image-invert');
+                }
+                document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+            });
+        });
+
+        function closeModal() {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restore scrolling
+        }
+
+        closeBtnFs.addEventListener('click', closeModal);
+
+        modal.addEventListener('click', (e) => {
+            // Close modal if the background is clicked, but not the image itself
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Also close with Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>

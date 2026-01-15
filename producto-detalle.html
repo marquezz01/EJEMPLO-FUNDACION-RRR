@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mochila Artesanal - Tienda Reddic</title>
+    <meta name="description" content="Detalles de la Mochila Artesanal, un producto con causa.">
+    
+    <!-- Favicon (espacio para el ícono de la web) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header (reutilizado) -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="index.html" class="brand" rel="home" aria-label="Fundación REDDIC - Inicio">
+                        <img src="img/logo.png" alt="Logo de la Fundación" class="logo-mark">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
+                        <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">nosotros</a></li>
+                        <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">emprendedores reddic</a></li>
+                        <li class="nav-item"><a href="nuestras-areas.html" class="nav-link">nuestro trabajo</a></li>
+                        <li class="nav-item"><a href="tienda.html" class="nav-link" aria-current="page">tienda</a></li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                        <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+                    </ul>
+                    <button class="burger" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false" id="hamburger">
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Móvil (reutilizado) -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="nav-menu" role="dialog" aria-modal="true" aria-hidden="true">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
+            <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">nosotros</a></li>
+            <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">emprendedores reddic</a></li>
+            <li class="nav-item"><a href="nuestras-areas.html" class="nav-link">nuestro trabajo</a></li>
+            <li class="nav-item"><a href="tienda.html" class="nav-link" aria-current="page">tienda</a></li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item donate"><a href="donaciones.html" class="nav-link">Donaciones</a></li>
+        </ul>
+    </div>
+
+    <main id="main" class="site-main" role="main">
+        <div class="container">
+            <div class="page-section">
+                <div class="product-detail-layout">
+                    <!-- Columna de Imágenes -->
+                    <div class="product-gallery">
+                        <div class="main-image">
+                            <img src="https://via.placeholder.com/600x600.png?text=Producto+1" alt="Mochila Artesanal - Vista principal">
+                        </div>
+                        <div class="thumbnail-images">
+                            <img src="https://via.placeholder.com/150x150.png?text=Thumb+1" alt="Vista 1" class="thumbnail active">
+                            <img src="https://via.placeholder.com/150x150.png?text=Thumb+2" alt="Vista 2" class="thumbnail">
+                            <img src="https://via.placeholder.com/150x150.png?text=Thumb+3" alt="Vista 3" class="thumbnail">
+                        </div>
+                    </div>
+
+                    <!-- Columna de Información -->
+                    <div class="product-details">
+                        <div class="product-main-info">
+                            <h1 class="product-detail-title">Mochila Artesanal</h1>
+                            <p class="product-detail-price">$75.000</p>
+                            <p class="product-short-description">
+                                Una mochila única tejida a mano por artesanos talentosos. Perfecta para el día a día, combinando estilo y tradición.
+                            </p>
+                        </div>
+
+                        <div class="product-actions">
+                            <div class="quantity-selector">
+                                <label for="quantity">Cantidad:</label>
+                                <input type="number" id="quantity" name="quantity" value="1" min="1">
+                            </div>
+                            <a href="#" class="btn btn-primary product-btn"><span>Añadir al carrito</span></a>
+                        </div>
+
+                        <div class="product-long-description">
+                            <h3>Descripción del Producto</h3>
+                            <p>Cada mochila es una obra de arte, elaborada con hilos de alta calidad y técnicas ancestrales. Al comprar este producto, no solo adquieres un accesorio de moda, sino que también apoyas directamente a las comunidades de artesanos, fomentando su desarrollo económico y la preservación de su cultura.</p>
+                            <ul>
+                                <li>Material: Hilo de algodón 100%</li>
+                                <li>Dimensiones: 30cm x 25cm x 15cm</li>
+                                <li>Hecho en Colombia</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Productos Relacionados -->
+                <section class="related-products">
+                    <h2>También te podría interesar</h2>
+                    <div class="product-grid">
+                        <!-- Producto de ejemplo 2 -->
+                        <div class="product-card">
+                            <a href="producto-detalle.html" class="product-card-link">
+                                <div class="product-image-container">
+                                    <img src="https://via.placeholder.com/400x400.png?text=Producto+2" alt="Juego de Cerámica" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Juego de Cerámica</h3>
+                                    <p class="product-price">$45.000</p>
+                                </div>
+                            </a>
+                            <div class="product-card-actions">
+                                <a href="#" class="btn btn-primary product-btn"><span>Añadir al carrito</span></a>
+                            </div>
+                        </div>
+                        <!-- Producto de ejemplo 3 -->
+                        <div class="product-card">
+                            <a href="producto-detalle.html" class="product-card-link">
+                                <div class="product-image-container">
+                                    <img src="https://via.placeholder.com/400x400.png?text=Producto+3" alt="Agenda de Cuero" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Agenda de Cuero</h3>
+                                    <p class="product-price">$50.000</p>
+                                </div>
+                            </a>
+                            <div class="product-card-actions">
+                                <a href="#" class="btn btn-primary product-btn"><span>Añadir al carrito</span></a>
+                            </div>
+                        </div>
+                        <!-- Producto de ejemplo 4 -->
+                        <div class="product-card">
+                            <a href="producto-detalle.html" class="product-card-link">
+                                <div class="product-image-container">
+                                    <img src="https://via.placeholder.com/400x400.png?text=Producto+4" alt="Camiseta Estampada" class="product-image">
+                                </div>
+                                <div class="product-info">
+                                    <h3 class="product-title">Camiseta Estampada</h3>
+                                    <p class="product-price">$35.000</p>
+                                </div>
+                            </a>
+                            <div class="product-card-actions">
+                                <a href="#" class="btn btn-primary product-btn"><span>Añadir al carrito</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Transforma Vidas con Tu Donación</h2>
+                <p class="cta-text">Tu apoyo es fundamental para seguir creando segundas oportunidades. Cada contribución, sin importar el tamaño, nos ayuda a fortalecer nuestros programas y a cambiar el futuro de muchas personas.</p>
+                <a href="donaciones.html" class="btn btn-primary cta-btn">Donar Ahora</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (reutilizado) -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-main">
+                <!-- Columna 1: Logo y Descripción -->
+                <div class="footer-column">
+                    <a href="index.html" class="footer-brand-link">
+                        <img src="img/logo.png" alt="Logo de la Fundación" class="footer-logo">
+                        <div class="footer-brand-text">
+                            <div class="footer-brand-sub">Fundación RED DE DESARROLLO</div>
+                            <div class="footer-brand-name">DIGITAL COLOMBIA</div>
+                        </div>
+                    </a>
+                    <p class="footer-description">Dignificamos y mejoramos la calidad de vida de la población carcelaria y pospenada en Colombia, <a href="donaciones.html" class="inline-donate-link">generando segundas oportunidades</a>.</p>
+                </div>
+
+                <!-- Columna 2: Enlaces de Navegación -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Navegación</h3>
+                    <ul class="footer-nav">
+                        <li><a href="sobre-nosotros.html">Sobre nosotros</a></li>
+                        <li><a href="nuestro-proposito.html">Nuestro propósito</a></li>
+                        <li><a href="tienda.html">Tienda Reddic</a></li>
+                        <li><a href="donaciones.html">Donar</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <!-- Columna 3: Contacto -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Contacto</h3>
+                    <p class="footer-description">
+                        Bogotá, Colombia<br>
+                        Email: <a href="mailto:info@reddic.org">info@reddic.org</a><br>
+                        Tel: <a href="tel:+5712345678">+57 (1) 234-5678</a>
+                    </p>
+                </div>
+
+                <!-- Columna 4: Redes Sociales -->
+                <div class="footer-column">
+                    <h3 class="footer-heading">Síguenos</h3>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" title="Facebook"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"/></svg></a>
+                        <a href="#" aria-label="Instagram" title="Instagram"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.85s-.011 3.584-.069 4.85c-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07s-3.584-.012-4.85-.07c-3.252-.148-4.771-1.691-4.919-4.919-.058-1.265-.069-1.645-.069-4.85s.011-3.584.069-4.85c.149-3.225 1.664-4.771 4.919-4.919C8.416 2.175 8.796 2.163 12 2.163zm0 1.441c-3.141 0-3.506.011-4.73.067-2.695.123-3.995 1.424-4.118 4.118-.056 1.224-.067 1.585-.067 4.73s.011 3.506.067 4.73c.123 2.695 1.423 3.995 4.118 4.118 1.224.056 1.585.067 4.73.067s3.506-.011 4.73-.067c2.695-.123 3.995-1.424 4.118-4.118.056-1.224.067-1.585.067-4.73s-.011-3.506-.067-4.73c-.123-2.695-1.423-3.995-4.118-4.118-1.224-.056-1.585-.067-4.73-.067zM12 8.292c-2.04 0-3.708 1.668-3.708 3.708s1.668 3.708 3.708 3.708 3.708-1.668 3.708-3.708-1.668-3.708-3.708-3.708zm0 5.976c-1.254 0-2.268-1.014-2.268-2.268s1.014-2.268 2.268-2.268 2.268 1.014 2.268 2.268-1.014 2.268-2.268 2.268zm4.332-6.636c-.598 0-1.082.484-1.082 1.082s.484 1.082 1.082 1.082 1.082-.484 1.082-1.082-.484-1.082-1.082-1.082z"/></svg></a>
+                        <a href="#" aria-label="Twitter" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+                    </div>
+                    <a href="donaciones.html" class="footer-donate-btn">Donaciones</a>
+                </div>
+            </div>
+            <div class="footer-bottom-bar">
+                <p>&copy; <span id="current-year"></span> Fundación RED DE DESARROLLO DIGITAL COLOMBIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de Donaciones -->
+    <a href="donaciones.html" class="floating-donate-btn">Donaciones</a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Donaciones - Fundación REDDIC</title>
+    <meta name="description" content="Apoya nuestra misión. Tu donación nos permite seguir fortaleciendo el emprendimiento en Colombia.">
+    
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-inner">
+                <div class="header-left">
+                    <a href="index.html" class="brand" rel="home" aria-label="Fundación REDDIC - Inicio">
+                        <img src="img/logo.png" alt="Logo de la Fundación" class="logo-mark">
+                    </a>
+                </div>
+                
+                <nav class="main-nav">
+                    <ul class="nav-list">
+                        <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
+                        <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">nosotros</a></li>
+                        <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">emprendedores reddic</a></li>
+                        <li class="nav-item"><a href="nuestras-areas.html" class="nav-link">nuestro trabajo</a></li>
+                        <li class="nav-item"><a href="tienda.html" class="nav-link">tienda</a></li>
+                        <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+                        <li class="nav-item donate"><a href="donaciones.html" class="nav-link" aria-current="page">Donaciones</a></li>
+                    </ul>
+                    <button class="burger" aria-label="Abrir menú" aria-controls="nav-menu" aria-expanded="false" id="hamburger">
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                        <span class="burger-bar"></span>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Menú Móvil -->
+    <div class="mobile-menu-overlay"></div>
+    <div class="mobile-menu" id="nav-menu" role="dialog" aria-modal="true" aria-hidden="true">
+        <ul class="nav-list">
+            <li class="nav-item"><a href="index.html" class="nav-link">home</a></li>
+            <li class="nav-item"><a href="sobre-nosotros.html" class="nav-link">nosotros</a></li>
+            <li class="nav-item"><a href="nuestro-proposito.html" class="nav-link">emprendedores reddic</a></li>
+            <li class="nav-item"><a href="nuestras-areas.html" class="nav-link">nuestro trabajo</a></li>
+            <li class="nav-item"><a href="tienda.html" class="nav-link">tienda</a></li>
+            <li class="nav-item"><a href="contacto.html" class="nav-link">Contacto</a></li>
+            <li class="nav-item donate"><a href="donaciones.html" class="nav-link" aria-current="page">Donaciones</a></li>
+        </ul>
+    </div>
+
+    <main id="main" class="site-main" role="main">
+        <!-- Encabezado de la página -->
+        <section class="shop-header">
+            <div class="container">
+                <h1 class="shop-title">Apoya Nuestra Misión</h1>
+                <p class="shop-subtitle">Tu generosidad es una inversión en el futuro de Colombia. Cada donación financia nuestra Ruta de Fortalecimiento, permitiendo que más emprendedores accedan a capacitación y herramientas para virtualizar sus negocios y crecer.</p>
+            </div>
+        </section>
+
+        <!-- Contenido principal de la página -->
+        <div class="container">
+            <div class="page-section">
+                <div class="section-inner">
+                    <article class="single-page-article">
+                        <section id="metodos-donacion">
+                            <h2>Elige cómo quieres contribuir</h2>
+                            <p>Tu aporte es fundamental para la sostenibilidad de nuestros programas. Hemos habilitado diferentes canales para que puedas realizar tu donación de forma segura y cómoda.</p>
+                            <div class="pilares-grid" style="margin-top: var(--spacing-lg);">
+                                <!-- Donación Online -->
+                                <div class="pilar-card">
+                                    <div class="pilar-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zM4 12h16V8H4v4zm0 6v-4h16v4H4z"/></svg>
+                                    </div>
+                                    <h3 class="pilar-title">Donación Online Segura</h3>
+                                    <p class="pilar-text">Realiza tu aporte de forma rápida y segura a través de nuestra pasarela de pagos en línea. Aceptamos todas las tarjetas de crédito y débito.</p>
+                                    <a href="#" class="btn btn-primary">Donar con Tarjeta</a>
+                                </div>
+                                <!-- Transferencia Bancaria -->
+                                <div class="pilar-card">
+                                    <div class="pilar-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M4 10h3v7H4zm6.5 0h3v7h-3zM2 19h20v-2H2v2zm15-9h3v7h-3zm-5-9L2 6v2h20V6L12 1z"/></svg>
+                                    </div>
+                                    <h3 class="pilar-title">Transferencia Bancaria</h3>
+                                    <p class="pilar-text">Puedes consignar directamente a nuestra cuenta de ahorros. Para obtener el certificado de donación, por favor notifícanos. <br>Bancolombia: 123-456789-00</p>
+                                    <a href="contacto.html" class="btn btn-outline">Notificar Consignación</a>
+                                </div>
+                                <!-- Donar en Especie -->
+                                <div class="pilar-card">
+                                    <div class="pilar-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="32" height="32"><path d="M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-6 0h-4V4h4v2z"/></svg>
+                                    </div>
+                                    <h3 class="pilar-title">Donaciones en Especie</h3>
+                                    <p class="pilar-text">Si representas a una empresa y deseas donar equipos, licencias de software u otros recursos que potencien a nuestros emprendedores, contáctanos.</p>
+                                    <a href="contacto.html" class="btn btn-outline">Hacer Alianza</a>
+                                </div>
+                            </div>
+                        </section>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <!-- ... Contenido del footer ... -->
+            <div class="footer-bottom-bar">
+                <p>&copy; <span id="current-year"></span> Fundación RED DE DESARROLLO DIGITAL COLOMBIA. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botón flotante de Donaciones -->
+    <a href="donaciones.html" class="floating-donate-btn">Donaciones</a>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
